@@ -38,3 +38,14 @@ We'll need to apply SOLID principles to this structure. Let's get started with t
 ### Your task:
 - Define the classes and interfaces based on the problem.
 - Ensure that SOLID principles (especially the ones we've learned) are applied.
+
+## Scenario: Library Management System
+We need to create a system where a library can manage its books, borrow and return them, and apply late fees.
+
+Here's an outline of what we need to do:
+
+- A Book class to represent a book in the library.
+- A Library class to manage the books and lend them.
+- A LateFee interface for different late fee calculations.
+- Implementations for StandardLateFee and PremiumLateFee.
+- A Member class for library members, with functionality to borrow and return books.
