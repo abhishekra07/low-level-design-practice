@@ -1,6 +1,6 @@
 package Online_Shopping_Cart_System;
 
-class Item {
+public class Item {
     private String name;
     private double price;
     private String description;
