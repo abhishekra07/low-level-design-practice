@@ -1,7 +1,9 @@
 package hotel_booking_system.hotelservice;
 
+import java.math.BigDecimal;
+
 public interface HotelService {
-    Double getPrice();
+    BigDecimal getPrice();
     String getDescription();
     String getName();
 }

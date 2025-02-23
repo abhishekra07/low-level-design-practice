@@ -6,25 +6,28 @@ import hotel_booking_system.customer.Customer;
 import hotel_booking_system.hotelservice.HotelService;
 import hotel_booking_system.room.Room;
 
-import java.time.LocalTime;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class Booking {
     private String bookingId;
     private Room room;
     private Customer customer;
-    private LocalTime checkInTime;
-    private LocalTime checkOutTime;
+    private LocalDate checkInDate;
+    private LocalDate checkOutDate;
     private BookingStatus bookingStatus;
     private HotelPolicy hotelPolicy;
     private List<HotelService> services;
-
-    public boolean isRoomAvailable(LocalTime startDate, LocalTime endDate) {
-        return (endDate.isBefore(hotelPolicy.getCheckInTime()) || startDate.isAfter(hotelPolicy.getCheckOutTime()));
-    }
+    private BigDecimal taxRate = new BigDecimal("0.10");
 
     public double calculatePrice() {
         return 0;
+    }
+
+    public long getNumberOfNights() {
+        return ChronoUnit.DAYS.between(checkInDate, checkOutDate);
     }
 
     public String getBookingId() {
@@ -81,5 +84,29 @@ public class Booking {
 
     public void removeService(HotelService service) {
         this.services.remove(service);
+    }
+
+    public LocalDate getCheckInDate() {
+        return checkInDate;
+    }
+
+    public LocalDate getCheckOutDate() {
+        return checkOutDate;
+    }
+
+    public void setCheckInDate(LocalDate checkInDate) {
+        this.checkInDate = checkInDate;
+    }
+
+    public void setCheckOutDate(LocalDate checkOutDate) {
+        this.checkOutDate = checkOutDate;
+    }
+
+    public BigDecimal getTaxRate() {
+        return taxRate;
+    }
+
+    public void setTaxRate(BigDecimal taxRate) {
+        this.taxRate = taxRate;
     }
 }

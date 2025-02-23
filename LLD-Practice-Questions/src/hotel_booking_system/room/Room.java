@@ -20,7 +20,7 @@ public abstract class Room {
 
     public Room() {}
 
-    public Room(String roomNo, RoomType roomType, String description, String moreInformation,
+    public Room(String roomNo, String description, String moreInformation,
                 BigDecimal pricePerNight, RoomStatus roomStatus, int capacity,
                 List<String> amenities, int floorNumber, BedType bedType) {
         this.roomNo = roomNo;

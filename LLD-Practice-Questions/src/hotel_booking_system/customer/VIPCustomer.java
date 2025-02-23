@@ -3,6 +3,7 @@ package hotel_booking_system.customer;
 import hotel_booking_system.booking.Booking;
 import hotel_booking_system.constants.enums.customer.CustomerDiscount;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class VIPCustomer extends Customer {
@@ -19,7 +20,7 @@ public class VIPCustomer extends Customer {
     }
 
     @Override
-    public int getDiscountPercentage() {
-        return customerDiscount.getDiscountPercentage();
+    public BigDecimal getDiscountPercentage() {
+        return BigDecimal.valueOf(customerDiscount.getDiscountPercentage());
     }
 }

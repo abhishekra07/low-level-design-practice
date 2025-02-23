@@ -1,20 +1,21 @@
 package hotel_booking_system.hotelservice;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ServiceBundle implements HotelService {
     private final String name;
     private final List<HotelService> services;
-    private final Double discountedPrice;
+    private final BigDecimal discountedPrice;
 
-    public ServiceBundle(String name, List<HotelService> services, Double discountedPrice) {
+    public ServiceBundle(String name, List<HotelService> services, BigDecimal discountedPrice) {
         this.name = name;
         this.services = services;
         this.discountedPrice = discountedPrice;
     }
 
     @Override
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return discountedPrice;
     }
 

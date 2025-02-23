@@ -1,8 +1,11 @@
 package hotel_booking_system.customer;
 
 import hotel_booking_system.booking.Booking;
+import hotel_booking_system.constants.enums.booking.BookingStatus;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public abstract class Customer {
     private String name;
@@ -21,7 +24,27 @@ public abstract class Customer {
 
     public abstract String getCustomerType();
 
-    public abstract int getDiscountPercentage();
+    public abstract BigDecimal getDiscountPercentage();
+
+    public void addBooking(Booking booking) {
+        this.bookingHistory.add(booking);
+    }
+
+    public void updateBooking(String bookingId, BookingStatus bookingStatus) {
+        this.bookingHistory.stream()
+                .filter(booking -> booking.getBookingId().equals(bookingId))
+                .forEach(booking -> booking.setBookingStatus(bookingStatus));
+    }
+
+    public List<Booking> getActiveBookings() {
+        return this.bookingHistory.stream().filter(booking -> booking.getBookingStatus() == BookingStatus.CONFIRMED)
+                .collect(Collectors.toList());
+    }
+
+    public List<Booking> getCompletedBookings() {
+        return this.bookingHistory.stream().filter(booking -> booking.getBookingStatus() == BookingStatus.COMPLETED)
+                .collect(Collectors.toList());
+    }
 
     public String getName() {
         return name;
