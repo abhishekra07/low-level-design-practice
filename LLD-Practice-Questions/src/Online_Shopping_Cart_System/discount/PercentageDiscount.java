@@ -1,4 +1,4 @@
-package Online_Shopping_Cart_System;
+package Online_Shopping_Cart_System.discount;
 
 public class PercentageDiscount implements Discount {
     @Override

@@ -21,4 +21,8 @@ public class Cart {
     public double calculateTotal() {
         return items.stream().mapToDouble(Item::getPrice).sum();
     }
+
+    public List<Item> getItems() {
+        return items;
+    }
 }
