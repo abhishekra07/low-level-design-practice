@@ -49,3 +49,30 @@ Here's an outline of what we need to do:
 - A LateFee interface for different late fee calculations.
 - Implementations for StandardLateFee and PremiumLateFee.
 - A Member class for library members, with functionality to borrow and return books.
+
+## Scenario: Hotel Booking System
+
+You are tasked with designing a hotel booking system. The system needs to handle different types of rooms and different types of customers. There should be flexibility in how we apply prices, discounts, and taxes depending on the room type and customer.
+
+Requirements:
+- Room Types:
+  - Single Room (basic room for one person). 
+  - Double Room (room for two people). 
+  - Suite Room (luxurious room with premium facilities).
+
+- Customers:
+  - Regular Customer: No special discounts, pays the full price.
+  - VIP Customer: Gets a 20% discount on room price.
+  
+- Services:
+  - Add additional services (like breakfast, spa, etc.) to the booking.
+
+- Booking:
+  - Ability to make a booking for a specified number of nights.
+
+- Price Calculation:
+  - Calculate the total price of the booking, including room price, additional services, and taxes (fixed tax rate of 10%).
+
+
+- Booking Report:
+  - Generate a report that includes the room type, customer type, price per night, number of nights, additional services, and the final amount with taxes and discounts.
